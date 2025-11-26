@@ -1,0 +1,8 @@
+2025-11-25 13:39:38 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-25 13:39:39 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-25 13:39:55 WARN  [c.e.d.controller.StudenteController] - Tentativo di eliminazione studente non esistente: 11111
+2025-11-25 14:45:47 WARN  [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56m38s957ms645µs100ns).
+2025-11-25 14:47:32 WARN  [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m45s11ms250µs).
+2025-11-25 15:01:26 WARN  [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m23s916ms978µs900ns).
+2025-11-26 10:16:52 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-26 10:16:54 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
