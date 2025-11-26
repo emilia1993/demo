@@ -11,7 +11,7 @@ public class Studente {
 
     @Id
     private String matricola;
-    private String nome;
+    private String nome ;
     private String cognome;
     private String corsoDiStudio;
 
