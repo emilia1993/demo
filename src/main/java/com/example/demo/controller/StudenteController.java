@@ -62,7 +62,7 @@ public class StudenteController {
     @PostMapping(value = "/studenti", headers = "Esame")
     public ResponseEntity<Esame> creaEsame(@RequestHeader("Esame") String nomeEsame,
                                            @RequestBody Esame esame) {
-        logger.info("POST /studenti - Creazione esame '{}' per studente {}", nomeEsame,
+        logger.info("POST /studenti - Creazione esame '{}' per lo studente {}", nomeEsame,
                 esame.getStudente() != null ? esame.getStudente().getMatricola() : "null");
 
         if (esame.getStudente() == null || esame.getStudente().getMatricola() == null) {
