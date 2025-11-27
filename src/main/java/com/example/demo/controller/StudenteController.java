@@ -116,7 +116,7 @@ public class StudenteController {
     public ResponseEntity<Void> eliminaStudente(@PathVariable String matricola) {
         logger.info("DELETE /studenti/{}", matricola);
 
-        if (!studenteRepository.existsById(matricola)) {
+        if (!studenteRepository.existsById(matricola) ) {
             logger.warn("Tentativo di eliminazione studente non esistente: {}", matricola);
             return ResponseEntity.notFound().build();
         }
