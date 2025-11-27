@@ -130,7 +130,7 @@ public class StudenteController {
     @PatchMapping("/studenti/{matricola}")
     public ResponseEntity<Studente> aggiornaParzialeStudente(@PathVariable String matricola,
                                                              @RequestBody Studente aggiornamenti) {
-        logger.info("PATCH /studenti/{} - Aggiornamento  parziale", matricola);
+        logger.info("PATCH /studenti/{} - Aggiornamento parziale", matricola);
 
         Studente studente = studenteRepository.findByMatricola(matricola);
         if (studente == null) {
