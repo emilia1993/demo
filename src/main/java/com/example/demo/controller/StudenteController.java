@@ -52,7 +52,7 @@ public class StudenteController {
     // Crea un nuovo studente
     @PostMapping("/studenti")
     public Studente creaStudente(@RequestBody Studente studente) {
-        logger.info("POST /studenti - Creazione nuovo studente con matricola {}", studente.getMatricola());
+        logger.info("POST /studenti - Creazione di nuovo studente con matricola {}", studente.getMatricola());
         Studente saved = studenteRepository.save(studente);
         logger.debug("Studente salvato: {}", saved);
         return saved;
