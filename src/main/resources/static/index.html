@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestione Studenti</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        textarea { width: 400px; height: 100px; }
+        button { margin: 5px; }
+        pre { background: #f4f4f4; padding: 10px; white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <h1>Gestione Studenti</h1>
+
+    <label>Input (JSON o matricola):</label><br>
+    <textarea id="inputArea"></textarea><br>
+
+    <button onclick="creaStudente()">Crea Studente (POST)</button>
+    <button onclick="leggiStudente()">Leggi Studente (GET)</button>
+    <button onclick="leggiStudentiMaggiore()">Leggi Studenti con matricola maggiore (GET)</button>
+    <button onclick="aggiornaStudente()">Aggiorna Studente (PATCH)</button>
+    <button onclick="aggiornaCorsoMaggiori()">Aggiorna Corso Studenti Maggiori (POST)</button>
+    <button onclick="eliminaStudente()">Elimina Studente (DELETE)</button>
+    <button onclick="creaEsame()">Crea Esame (POST)</button>
+
+    <h2>Risultato:</h2>
+    <pre id="outputArea"></pre>
+
+    <script>
+        const baseUrl = 'http://localhost:8080/studenti';
+
+        function getInput() {
+            return document.getElementById('inputArea').value.trim();
+        }
+
+        function setOutput(text) {
+            document.getElementById('outputArea').textContent = text;
+        }
+
+        async function creaStudente() {
+            try {
+                const studente = JSON.parse(getInput());
+                const res = await fetch(baseUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(studente)
+                });
+                const data = await res.json();
+                setOutput(JSON.stringify(data, null, 2));
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+
+        async function leggiStudente() {
+            const matricola = getInput();
+            try {
+                const res = await fetch(`${baseUrl}/${encodeURIComponent(matricola)}`);
+                if (!res.ok) { setOutput("Errore: " + res.status); return; }
+                const data = await res.json();
+                setOutput(JSON.stringify(data, null, 2));
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+
+        async function leggiStudentiMaggiore() {
+            const matricola = getInput();
+            try {
+                const res = await fetch(`${baseUrl}?matricola=${encodeURIComponent(matricola)}`);
+                if (!res.ok) { setOutput("Errore: " + res.status); return; }
+                const data = await res.json();
+                setOutput(JSON.stringify(data, null, 2));
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+
+        async function aggiornaStudente() {
+            try {
+                const obj = JSON.parse(getInput());
+                const matricola = obj.matricola;
+                delete obj.matricola;
+                const res = await fetch(`${baseUrl}/${encodeURIComponent(matricola)}`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(obj)
+                });
+                if (!res.ok) { setOutput("Errore: " + res.status); return; }
+                const data = await res.json();
+                setOutput(JSON.stringify(data, null, 2));
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+
+        async function aggiornaCorsoMaggiori() {
+            try {
+                const obj = JSON.parse(getInput());
+                const matricola = obj.matricola;
+                const res = await fetch(`${baseUrl}/aggiorna-corso-maggiori?matricola=${encodeURIComponent(matricola)}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ corsoDiStudio: obj.corsoDiStudio })
+                });
+                if (!res.ok) { setOutput("Errore: " + res.status); return; }
+                const data = await res.json();
+                setOutput(JSON.stringify(data, null, 2));
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+
+        async function eliminaStudente() {
+            const matricola = getInput();
+            try {
+                const res = await fetch(`${baseUrl}/${encodeURIComponent(matricola)}`, { method: 'DELETE' });
+                setOutput(res.status === 204 ? "Studente eliminato" : "Errore: " + res.status);
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+
+        async function creaEsame() {
+            try {
+                const obj = JSON.parse(getInput());
+                const nomeEsame = obj.nomeEsame;
+                const res = await fetch(baseUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Esame': nomeEsame },
+                    body: JSON.stringify({ 
+                        studente: { matricola: obj.matricola }, 
+                        dataEsame: obj.dataEsame, 
+                        voto: obj.voto 
+                    })
+                });
+                if (!res.ok) { setOutput("Errore: " + res.status); return; }
+                const data = await res.json();
+                setOutput(JSON.stringify(data, null, 2));
+            } catch (e) { setOutput("Errore: " + e); }
+        }
+    </script>
+</body>
+</html>
