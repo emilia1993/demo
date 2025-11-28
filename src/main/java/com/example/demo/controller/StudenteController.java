@@ -99,7 +99,7 @@ public class StudenteController {
         List<Studente> studenti = studenteRepository.findByMatricolaGreaterThanNumeric(matricola);
 
         if (studenti.isEmpty()) {
-            logger.warn("Nessuno studente trovato con matricola maggiore di {}", matricola);
+            logger.warn("Nessuno studente trovato con la matricola maggiore di {}", matricola);
             return ResponseEntity.notFound().build();
         }
 
