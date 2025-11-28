@@ -11,3 +11,52 @@
 2025-11-28 11:44:12 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2025-11-28 11:44:14 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2025-11-28 11:45:12 WARN  [o.s.w.s.m.s.DefaultHandlerExceptionResolver] - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.example.demo.entity.Studente` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (12345)]
+2025-11-28 12:11:23 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 12:11:24 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 12:11:26 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 999 non trovato
+2025-11-28 12:14:05 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 12:14:07 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 12:14:08 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 999 non trovato
+2025-11-28 12:15:02 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 12:15:04 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 12:15:05 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 999 non trovato
+2025-11-28 12:18:53 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 12:18:55 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 12:18:56 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 999 non trovato
+2025-11-28 12:23:30 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 12:23:31 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 12:23:32 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 999 non trovato
+2025-11-28 13:02:17 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 13:02:20 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 13:02:21 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 999 non trovato
+2025-11-28 13:02:38 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 13:02:40 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 13:03:07 ERROR [c.e.d.controller.StudenteController] - Studente con matricola 44444 non trovato
+2025-11-28 13:06:30 ERROR [c.e.d.controller.StudenteController] - Studente con matricola {
+  "matricola": "11111",
+  "nome": "Marco",
+  "cognome": "Rossini",
+  "corsoDiStudio": "Informatica"
+} non trovato
+2025-11-28 13:08:25 WARN  [org.hibernate.orm.deprecation] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28 13:08:28 WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28 13:10:58 ERROR [c.e.d.controller.StudenteController] - Studente con matricola {
+  "matricola": "44444",
+  "nome": "Alessia",
+  "cognome": "Martinelli",
+  "corsoDiStudio": "Ingegneria Informatica"
+ } non trovato
+2025-11-28 13:11:01 ERROR [c.e.d.controller.StudenteController] - Studente con matricola {
+  "matricola": "44444",
+  "nome": "Alessia",
+  "cognome": "Martinelli",
+  "corsoDiStudio": "Ingegneria Informatica"
+ } non trovato
+2025-11-28 13:11:04 ERROR [c.e.d.controller.StudenteController] - Studente con matricola {
+  "matricola": "44444",
+  "nome": "Alessia",
+  "cognome": "Martinelli",
+  "corsoDiStudio": "Ingegneria Informatica"
+ } non trovato
+2025-11-28 13:13:41 ERROR [c.e.d.controller.StudenteController] - Studente undefined non trovato per aggiornamento
+2025-11-28 13:13:42 ERROR [c.e.d.controller.StudenteController] - Studente undefined non trovato per aggiornamento
